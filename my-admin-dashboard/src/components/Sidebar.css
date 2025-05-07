@@ -1,0 +1,27 @@
+
+.sidebar {
+    width: 220px;
+    background-color: #2a2a40;
+    color: white;
+    height: 100vh;
+    padding-top: 2rem;
+    position: fixed;
+    top: 60px; /* نفس ارتفاع Navbar */
+    left: 0;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    padding: 15px 20px;
+    cursor: pointer;
+  }
+  
+  .sidebar li:hover {
+    background-color: #3e3e5e;
+  }
+  
+  
