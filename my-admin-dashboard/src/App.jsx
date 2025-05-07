@@ -1,17 +1,31 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { UserProvider } from './contexts/UserContext';
+import AdminDashboard from './pages/AdminDashboard';
+import ProtectedRoute from './components/ProtectedRoute';
+import Forbidden from './pages/Forbidden';
+import Login from './pages/Login';
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import DashboardHome from "./pages/DashboardHome";
-import AdminDashboard from "./pages/AdminDashboard";
-
-function App() {
+const App = () => {
   return (
-    <Router>
-      <Routes>
-      <Route path="/" element={<DashboardHome />} />
-        <Route path="/admin" element={<AdminDashboard />} />
-      </Routes>
-    </Router>
+    <UserProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute adminOnly>
+                <AdminDashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="/login" element={<Login />} />
+          <Route path="/403" element={<Forbidden />} />
+        </Routes>
+      </Router>
+    </UserProvider>
   );
-}
+};
 
 export default App;

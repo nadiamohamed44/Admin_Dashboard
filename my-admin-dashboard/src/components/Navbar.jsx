@@ -4,11 +4,11 @@ import "./Navbar.css";
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <h1 className="logo">لوحة التحكم</h1>
+      <h1 className="logo"> ADMIN</h1>
       <ul className="nav-links">
-        <li><a href="/dashboard">الرئيسية</a></li>
-        <li><a href="/users">المستخدمين</a></li>
-        <li><a href="/settings">الإعدادات</a></li>
+        <li><a href="/dashboard">HOME</a></li>
+        <li><a href="/users">USERS</a></li>
+        <li><a href="/settings">SETTINGS</a></li>
       </ul>
     </nav>
   );

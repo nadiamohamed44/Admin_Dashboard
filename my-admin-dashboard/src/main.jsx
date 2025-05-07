@@ -1,14 +1,14 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import App from "./App.jsx";
-import "./index.css";
+// src/index.jsx
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import './index.css';
+import { UserProvider } from './contexts/UserContext';
 
-import { UserContext } from "./contexts/UserContext";
-
-createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <UserContext.Provider value={{ isAdmin: true }}>
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <UserProvider>
       <App />
-    </UserContext.Provider>
-  </StrictMode>
+    </UserProvider>
+  </React.StrictMode>
 );

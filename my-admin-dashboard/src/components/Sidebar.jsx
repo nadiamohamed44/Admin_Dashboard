@@ -1,15 +1,24 @@
-
-import React from 'react';
-import './Sidebar.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Sidebar.css";
 
 const Sidebar = () => {
   return (
     <aside className="sidebar">
-      <ul>
-        <li>لوحة التحكم</li>
-        <li>المستخدمين</li>
-        <li>الإعدادات</li>
-        <li>تسجيل الخروج</li>
+      <h2 className="sidebar-title">Admin Panel</h2>
+      <ul className="sidebar-menu">
+        <li>
+          <Link to="/admin">Dashboard</Link>
+        </li>
+        <li>
+          <Link to="/admin/users">Users</Link>
+        </li>
+        <li>
+          <Link to="/admin/packages">Packages</Link>
+        </li>
+        <li>
+          <Link to="/admin/bookings">Bookings</Link>
+        </li>
       </ul>
     </aside>
   );

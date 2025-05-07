@@ -1,12 +1,21 @@
-# React + Vite
+# Admin Dashboard - React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+##  How to Test Admin vs. Non-Admin Access
 
-Currently, two official plugins are available:
+###  Logging in as Admin:
+1. Go to `http://localhost:5173/login`.
+2. Click the `Login as Admin` button.
+3. You will be redirected to `/admin`.
+4. You should see the Admin Dashboard with statistics and sidebar links.
+5. If Maintenance Mode is enabled, a visual indicator will appear.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+###  Logging in as Normal User (Non-Admin):
+1. Go to `http://localhost:5173/login`.
+2. Click the `Login as User` button.
+3. You will be redirected to `/admin`.
+4. Since this user is not an admin, they will be automatically redirected to the `/403` Forbidden page.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+###  Success Criteria:
+- **Admin**: Can access and view the dashboard.
+- **Non-Admin**: Gets redirected to the forbidden page.
+- Maintenance Mode indicator is visible and updates correctly.

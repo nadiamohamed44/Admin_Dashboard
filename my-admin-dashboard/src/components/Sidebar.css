@@ -1,7 +1,8 @@
 
 .sidebar {
     width: 220px;
-    background-color: #2a2a40;
+    /* background-color: #2a2a40; */
+    background: linear-gradient(135deg, #0f2027, #25454f, #2c5364);
     color: white;
     height: 100vh;
     padding-top: 2rem;
@@ -22,6 +23,30 @@
   
   .sidebar li:hover {
     background-color: #3e3e5e;
+  }
+  
+  .sidebar-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .sidebar-menu {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar-menu li {
+    margin: 20px 0;
+  }
+  
+  .sidebar-menu li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .sidebar-menu li a:hover {
+    text-decoration: underline;
   }
   
   
